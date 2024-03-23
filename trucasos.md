@@ -16,3 +16,5 @@ apt --fix-broken install
 sudo apt --fix-broken install
 apt update && apt install -f
 sudo apt update && apt install -f
+
+https://archive.org/details/tiny-11_202302
