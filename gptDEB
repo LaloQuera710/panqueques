@@ -1,0 +1,77 @@
+
+linovox.com
+Quick and Easy Way to Create a Windows 11 Bootable USB in Ubuntu - Linovox
+~4 minutes
+
+A bootable USB drive is necessary to install a new operating system in a computer. In Ubuntu, there are several utilities to create a bootable USB drive.
+
+Most utilities are command-line based, and some have compatibility issues. If you are looking for a tool that works flawlessly in both Linux and Windows, Ventoy is the best choice.
+
+Ezoic
+
+In this blog post, I’ll show how to easily create a bootable drive with Ventoy.
+Prerequisites
+
+Before making a bootable USB, make sure you meet the prerequisite
+
+    A pendrive with storage of at least 8 GB
+    A Ubuntu Operating System with Administrative Privilege
+    Ezoic
+
+Before you begin, create a backup of your USB drive because making a bootable USB drive will erase the USB drive. You can not undo this process.
+Download Windows 11 ISO
+
+The first step is to download Windows 11 ISO image. You can download the ISO file from Microsoft’s official website for free https://www.microsoft.com/software-download/windows11.
+Install Ventoy
+
+You must download and Install Ventoy in Ubuntu to make a bootable USB. Ventoy supports multiple bootable ISO. To properly install Ventoy in Ubuntu, follow these steps.
+
+Open your terminal by pressing ALT + CTRL + T and enter the following command to download the latest Ventoy version from GitHub
+
+wget -O ~/ventoy.tar.gz https://github.com/ventoy/Ventoy/releases/download/v1.0.97/ventoy-1.0.97-linux.tar.gz
+
+To extract the archive enter the commands
+
+tar -zxvf ~/ventoy.tar.gz
+
+Now that you have downloaded the Ventoy. It’s time to create a bootable USB. Open your Ubuntu terminal and navigate to the Ventoy script’s directory to make a bootable USB. You can do so by entering the command in your terminal.
+
+Ezoic
+
+cd ventoy-1.0.97
+
+In the Ventoy directory, the CLI and GUI version of Ventoy are available. We will use GUI only to make this tutorial easy. Open Ventoy GUI with the following command
+
+sudo ./VentoyGUI.x86_64
+
+Select Your USB Drive
+
+Select the USB drive you want to make bootable if you have multiple USB inserts in your Ubuntu Machine.
+select your usb
+
+    Before proceeding, ensure you have backed up your essential files from the USB drive. This process will erase your USB drive.
+
+Choose Partition Style
+
+After selecting the partition style, choose the partition style depending on your needs. To select the correct partition style, click option in the left corner, and in Partition Style, you will find two options MRB and GPT. By default, Ventoy creates a USB drive with MRB partition style. If you use UFEI boot, use GPT partition style, or if you use legacy boot, choose MRB boot. For most people, a UFEI boot is recommended.
+select gpt partition style
+
+GPT is a newer partition style that replaces Older Bios and provides additional security and faster booting time. If your computer supports UFEI mode, select it.
+Install Ventoy
+
+After choosing the correct partition style, click Install to make the USB drive bootable. You will see a warning that your USB will be erased.
+install GPT partition prompt
+
+Select ok to continue.
+Warning for data erase
+Copy ISO Files to Ventoy Drive
+
+After installing Ventoy in the USB drive, the USB drive has become bootable. Now copy Windows 11 iso file that you previously downloaded to the Ventoy folder.
+
+Ezoic
+copy windows 11 iso to ventoy
+
+That’s it. You have successfully made Windows 11 bootable drive.
+Conclusion
+
+Ventoy is a cross-platform utility to create a bootable USB. You can copy multiple ISO files by simply copying ISO files in the Ventoy directory. This tutorial allows you to create a bootable USB drive in Ubuntu easily.
